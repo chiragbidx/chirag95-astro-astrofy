@@ -1,0 +1,33 @@
+---
+export interface Props {
+  activeItemID?: string
+}
+
+const { activeItemID } = Astro.props
+---
+
+<nav class="w-full flex items-center justify-between py-4 px-8 bg-base-100 border-b border-base-200">
+  <div class="text-2xl font-bold tracking-tight text-primary">
+    Chirag Dodiya
+  </div>
+  <ul class="flex gap-6">
+    <li>
+      <a href="/" class={activeItemID === "home" ? "font-semibold text-accent" : ""}>Home</a>
+    </li>
+    <li>
+      <a href="/projects" class={activeItemID === "projects" ? "font-semibold text-accent" : ""}>Projects</a>
+    </li>
+    <li>
+      <a href="/services" class={activeItemID === "services" ? "font-semibold text-accent" : ""}>Services</a>
+    </li>
+    <li>
+      <a href="/cv" class={activeItemID === "cv" ? "font-semibold text-accent" : ""}>Resume</a>
+    </li>
+    <li>
+      <a href="/blog" class={activeItemID === "blog" ? "font-semibold text-accent" : ""}>Blog</a>
+    </li>
+    <li>
+      <a href="/contact" class={activeItemID === "contact" ? "font-semibold text-accent" : ""}>Contact</a>
+    </li>
+  </ul>
+</nav>
